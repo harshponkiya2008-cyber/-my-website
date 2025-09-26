@@ -1,23 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ponkiya Harsh - Personal Website</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto&display=swap');
+
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #f0f0f5;
+      background: linear-gradient(135deg, #6e45e2, #88d3ce);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #ffdd57;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    main {
+      width: 90%;
+      max-width: 700px;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      padding: 30px 40px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ffdd57;
+      padding-bottom: 10px;
+      color: #fff;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #ddd;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      font-size: 1.1rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.3);
+      color: #ddd;
+      text-align: center;
+      padding: 15px 20px;
+      font-size: 1rem;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        font-size: 2rem;
+        padding: 30px 10px;
+      }
+      main {
+        padding: 25px 20px;
+        margin: 20px auto;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      p, ul li {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to My Website</h1>
+    Welcome to My Website
   </header>
   <main>
     <section>
       <h2>About Me</h2>
-      <p>My name is [Ponkiya Harsh].</p>
-      <p>I am passionate about [Coading].</p>
+      <p>My name is Ponkiya Harsh.</p>
+      <p>I am passionate about Coading.</p>
       <ul>
         <li>Email: harshponkiya2008@gmail.com</li>
-        <li>Location: [gondal, INDIA]</li>
-        <li>Favorite Hobby: [Cricket]</li>
+        <li>Location: Gondal, INDIA</li>
+        <li>Favorite Hobby: Cricket</li>
       </ul>
     </section>
     <section>
@@ -25,13 +133,14 @@
       <p>Feel free to reach out via email or through my social profiles below:</p>
       <ul>
         <li><a href="mailto:harshponkiya2008@gmail.com">Email Me</a></li>
-        <li><a href="https://www.linkedin.com/in/harsh-ponkiya-233583386/">LinkedIn</a></li>
-        <li><a href="https://twitter.com/yourprofile">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/harsh-ponkiya-233583386/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://twitter.com/yourprofile" target="_blank" rel="noopener">Twitter</a></li>
       </ul>
     </section>
   </main>
   <footer>
-    <p>© 2025 [Ponkiya Harsh]. All rights reserved.</p>
+    © 2025 Ponkiya Harsh. All rights reserved.
   </footer>
 </body>
 </html>
+
