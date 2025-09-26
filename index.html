@@ -1,425 +1,521 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ponkiya Harsh | Personal Website</title>
-  <style>
-    /* CSS Variables for consistent theming */
-    :root {
-      --primary-color: #2c3e50;
-      --secondary-color: #3498db;
-      --accent-color: #e74c3c;
-      --light-color: #ecf0f1;
-      --dark-color: #2c3e50;
-      --text-color: #333;
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-    }
+Got it! You want your personal website to be **eye-catching, attractive, sexy-looking, job-seeking focused, very beautiful, and hard for others to replicate** — a true standout portfolio page.
 
-    /* Base Styles */
+I’ll redesign and enhance your page with a **modern, sleek, professional look** featuring:
+
+* A **dark mode theme** with vibrant accent colors
+* Smooth **glassmorphism effects**
+* Clean typography with subtle animations
+* A **sticky header** and **floating contact button**
+* Elegant social icons with hover animations
+* Professional "About Me" with skill badges
+* A minimal but **powerful call-to-action**
+* Responsive layout with a **cool hero image placeholder**
+
+---
+
+Here’s the **completely revamped version** of your portfolio website:
+
+```html
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ponkiya Harsh | Next-Level Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: var(--text-color);
-      background-color: #f9f9f9;
+    html, body {
+      height: 100%;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #e0e0e0;
+      scroll-behavior: smooth;
     }
-
     a {
       text-decoration: none;
-      color: var(--secondary-color);
-      transition: var(--transition);
+      color: #00fff7;
+      transition: 0.3s ease;
     }
-
     a:hover {
-      color: var(--accent-color);
+      color: #ff2e63;
     }
-
     ul {
-      list-style-type: none;
+      list-style: none;
     }
-
+    /* CONTAINER */
     .container {
-      width: 90%;
-      max-width: 1200px;
+      max-width: 1100px;
+      padding: 0 20px;
       margin: 0 auto;
-      padding: 0 15px;
     }
 
-    section {
-      padding: 60px 0;
-    }
-
-    /* Header Styles */
+    /* STICKY HEADER */
     header {
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      color: white;
-      text-align: center;
-      padding: 100px 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
+      position: sticky;
       top: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      color: #00fff7;
+      user-select: none;
+      cursor: default;
+      text-transform: uppercase;
+    }
+    nav ul {
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li a {
+      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
+      padding: 5px 0;
+    }
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #ff2e63;
       left: 0;
+      bottom: -5px;
+      transition: 0.3s ease;
+    }
+    nav ul li a:hover::after {
       width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.2);
-      z-index: 1;
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 2;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Profile Section */
-    .profile {
+    /* HERO SECTION */
+    header.hero {
+      height: 100vh;
       display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      background-color: white;
-      border-radius: 10px;
-      padding: 40px;
-      box-shadow: var(--shadow);
-      margin-top: -80px;
+      padding: 0 20px;
+      background:
+        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80')
+        no-repeat center center/cover;
       position: relative;
-      z-index: 3;
     }
-
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid white;
-      box-shadow: var(--shadow);
+    header.hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 26, 46, 0.8);
+      z-index: 0;
+    }
+    header.hero .content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      color: #00fff7;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+    header.hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
       margin-bottom: 20px;
+      letter-spacing: 4px;
+      text-shadow: 0 0 10px #00fff7;
     }
-
-    .profile h2 {
-      color: var(--primary-color);
-      margin-bottom: 15px;
-      font-size: 2rem;
-    }
-
-    .profile p {
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-    }
-
-    /* About Section */
-    .about {
-      background-color: white;
-    }
-
-    .about h2 {
-      text-align: center;
-      color: var(--primary-color);
+    header.hero p {
+      font-size: 1.3rem;
       margin-bottom: 40px;
-      font-size: 2.5rem;
-      position: relative;
+      font-weight: 300;
+      color: #9be8e8;
+      text-shadow: 0 0 6px rgba(0, 255, 247, 0.7);
     }
-
-    .about h2::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: var(--secondary-color);
-      margin: 10px auto;
-      border-radius: 2px;
-    }
-
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-
-    @media (min-width: 768px) {
-      .about-content {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .about-text p {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-    }
-
-    .info-list li {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-      padding: 10px;
-      background-color: var(--light-color);
-      border-radius: 5px;
-      transition: var(--transition);
-    }
-
-    .info-list li:hover {
-      transform: translateX(5px);
-      box-shadow: var(--shadow);
-    }
-
-    .info-list li i {
-      margin-right: 10px;
-      color: var(--secondary-color);
-      font-size: 1.2rem;
-    }
-
-    /* Contact Section */
-    .contact {
-      background-color: var(--light-color);
-    }
-
-    .contact h2 {
-      text-align: center;
-      color: var(--primary-color);
-      margin-bottom: 40px;
-      font-size: 2.5rem;
-      position: relative;
-    }
-
-    .contact h2::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: var(--secondary-color);
-      margin: 10px auto;
-      border-radius: 2px;
-    }
-
-    .contact-content {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-
-    @media (min-width: 768px) {
-      .contact-content {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .contact-text p {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-    }
-
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: white;
-      border-radius: 5px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-
-    .social-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .social-link i {
-      margin-right: 8px;
-      font-size: 1.2rem;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--dark-color);
-      color: white;
-      text-align: center;
-      padding: 30px 0;
-    }
-
-    /* Utility Classes */
-    .btn {
-      display: inline-block;
-      padding: 12px 30px;
-      background-color: var(--secondary-color);
-      color: white;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: var(--transition);
+    .btn-primary {
+      background: linear-gradient(45deg, #ff2e63, #00fff7);
       border: none;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      color: #121212;
+      box-shadow: 0 0 15px #00fff7;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 30px #ff2e63;
+      transform: scale(1.1);
+    }
+
+    /* GLASS CARD */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 40px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #e0e0e0;
+      transition: transform 0.3s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 12px 50px rgba(255, 46, 99, 0.6);
+    }
+
+    /* PROFILE SECTION */
+    section.profile {
+      margin: -100px auto 60px;
+      max-width: 800px;
+      text-align: center;
+    }
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 6px solid #ff2e63;
+      overflow: hidden;
+      margin: 0 auto 30px;
+      box-shadow: 0 0 30px #00fff7;
+      background: url('https://avatars.githubusercontent.com/u/55601015?v=4') center/cover no-repeat;
+      transition: transform 0.4s ease;
       cursor: pointer;
     }
-
-    .btn:hover {
-      background-color: var(--accent-color);
-      transform: translateY(-2px);
+    .profile-img:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 50px #ff2e63;
+    }
+    .profile h2 {
+      font-size: 2.7rem;
+      color: #00fff7;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+    .profile p {
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: #9be8e8;
+      margin-bottom: 30px;
     }
 
-    /* Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* SKILLS BADGES */
+    .skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    .skill-badge {
+      background: linear-gradient(135deg, #ff2e63, #00fff7);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #121212;
+      box-shadow: 0 0 10px #ff2e63;
+      transition: transform 0.3s ease;
+      cursor: default;
+      user-select: none;
+    }
+    .skill-badge:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #00fff7;
     }
 
-    .fade-in {
-      animation: fadeIn 1s ease forwards;
+    /* ABOUT SECTION */
+    section.about {
+      max-width: 900px;
+      margin: 80px auto 60px;
+      padding: 40px 30px;
+    }
+    .about h2 {
+      font-size: 2.8rem;
+      margin-bottom: 25px;
+      text-align: center;
+      color: #00fff7;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 6px #00fff7;
+    }
+    .about p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      color: #b3f7f5;
+      text-align: justify;
+      user-select: text;
+    }
+
+    /* INFO LIST */
+    .info-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .info-list li {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 15px 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #00fff7;
+      font-size: 1.1rem;
+      color: #b3f7f5;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+      transition: box-shadow 0.3s ease;
+    }
+    .info-list li i {
+      font-size: 1.4rem;
+      color: #ff2e63;
+    }
+    .info-list li:hover {
+      box-shadow: 0 0 25px #ff2e63;
+      cursor: default;
+    }
+
+    /* CONTACT SECTION */
+    section.contact {
+      max-width: 900px;
+      margin: 80px auto 100px;
+      padding: 40px 30px;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      box-shadow: 0 0 25px #ff2e63;
+    }
+    section.contact h2 {
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #ff2e63;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 8px #ff2e63;
+    }
+    .contact-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .contact-text {
+      flex: 1 1 350px;
+      font-size: 1.15rem;
+      color: #f1c0c0;
+      user-select: text;
+      line-height: 1.5;
+    }
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .social-link {
+      background: linear-gradient(45deg, #ff2e63, #00fff7);
+      padding: 10px 25px;
+      border-radius: 30px;
+      color: #121212;
+      font-weight: 700;
+      box-shadow: 0 0 15px #00fff7;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    .social-link:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 35px #ff2e63;
+    }
+    .social-link i {
+      font-size: 1.3rem;
+    }
+
+    /* CONTACT FORM */
+    form {
+      flex: 1 1 350px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    input,
+    textarea {
+      padding: 15px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.15);
+      color: #e0e0e0;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s ease;
+      resize: none;
+    }
+    input::placeholder,
+    textarea::placeholder {
+      color: #c1c1c1;
+      font-weight: 300;
+    }
+    input:focus,
+    textarea:focus {
+      background: rgba(255, 255, 255, 0.3);
+      outline: none;
+      box-shadow: 0 0 15px #00fff7;
+    }
+    button.btn-primary {
+      align-self: flex-start;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #121212;
+      color: #444;
+      font-weight: 300;
+      user-select: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.4px;
+      box-shadow: inset 0 5px 10px #222;
+    }
+
+    /* MEDIA QUERIES */
+    @media (max-width: 900px) {
+      header.hero h1 {
+        font-size: 2.8rem;
+      }
+      .contact-content {
+        flex-direction: column;
+        gap: 30px;
+      }
+      section.about {
+        padding: 20px 15px;
+      }
+      section.contact {
+        padding: 20px 15px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      header.hero h1 {
+        font-size: 2.3rem;
+      }
+      .profile h2 {
+        font-size: 2.3rem;
+      }
+      .btn-primary {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <!-- Sticky Navigation -->
   <header>
-    <div class="container">
-      <h1>Ponkiya Harsh</h1>
-      <p>Passionate Coder & Cricket Enthusiast</p>
+    <nav class="container">
+      <div class="logo">HarshPonkiya</div>
+      <ul>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <header class="hero" role="banner" aria-label="Hero section introducing Ponkiya Harsh">
+    <div class="content">
+      <h1>Harsh Ponkiya</h1>
+      <p>Passionate Coder & Cricket Enthusiast from Gondal, India</p>
+      <a href="#contact" class="btn-primary" aria-label="Contact Ponkiya Harsh">Get in Touch</a>
     </div>
   </header>
 
-  <main>
-    <section class="container">
-      <div class="profile fade-in">
-        <!-- Placeholder for profile image -->
-        <div class="profile-img" style="background-color: #3498db; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-          <i class="fas fa-user"></i>
-        </div>
-        <h2>Hello, I'm Harsh</h2>
-        <p>A passionate coder from Gondal, India</p>
-        <a href="#contact" class="btn">Get in Touch</a>
+  <main class="container" role="main">
+    <!-- Profile Section -->
+    <section id="profile" class="profile glass-card" tabindex="0" aria-label="Profile introduction">
+      <div
+        class="profile-img"
+        aria-label="Profile image of Ponkiya Harsh"
+        role="img"
+        style="background-image: url('https://avatars.githubusercontent.com/u/55601015?v=4');"
+      ></div>
+      <h2>Hello, I'm Harsh</h2>
+      <p>A passionate coder constantly evolving my skills and a cricket lover.</p>
+
+      <div class="skills" aria-label="List of skills">
+        <div class="skill-badge">JavaScript</div>
+        <div class="skill-badge">React</div>
+        <div class="skill-badge">Node.js</div>
+        <div class="skill-badge">CSS3</div>
+        <div class="skill-badge">HTML5</div>
+        <div class="skill-badge">Git & GitHub</div>
       </div>
+      <a href="#contact" class="btn-primary" aria-label="Contact Ponkiya Harsh">Contact Me</a>
     </section>
 
-    <section class="about">
-      <div class="container">
-        <h2>About Me</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>My name is Ponkiya Harsh.</p>
-            <p>I am passionate about coding and constantly exploring new technologies to enhance my skills. When I'm not coding, you can find me enjoying a game of cricket or exploring new ideas.</p>
-          </div>
-          <div class="about-info">
-            <ul class="info-list">
-              <li>
-                <i class="fas fa-envelope"></i>
-                <span>Email: harshponkiya2008@gmail.com</span>
-              </li>
-              <li>
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Location: Gondal, INDIA</span>
-              </li>
-              <li>
-                <i class="fas fa-heart"></i>
-                <span>Favorite Hobby: Cricket</span>
-              </li>
-              <li>
-                <i class="fas fa-code"></i>
-                <span>Passion: Coding</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <!-- About Section -->
+    <section id="about" class="about glass-card" tabindex="0" aria-label="About Ponkiya Harsh">
+      <h2>About Me</h2>
+      <p>
+        My name is Ponkiya Harsh. I'm a software developer with a strong passion for creating beautiful, performant web applications.
+        I enjoy learning cutting-edge technologies and implementing them in creative ways. When I'm not coding, I love playing cricket, which teaches me teamwork and strategy — skills I bring to my coding projects.
+      </p>
+
+      <ul class="info-list" aria-label="Personal information">
+        <li><i class="fas fa-envelope"></i> <span>harshponkiya2008@gmail.com</span></li>
+        <li><i class="fas fa-map-marker-alt"></i> <span>Gondal, INDIA</span></li>
+        <li><i class="fas fa-heart"></i> <span>Cricket Enthusiast</span></li>
+        <li><i class="fas fa-code"></i> <span>Full-Stack Developer</span></li>
+      </ul>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2>Contact Me</h2>
-        <div class="contact-content">
-          <div class="contact-text">
-            <p>Feel free to reach out via email or through my social profiles below. I'm always open to discussing new opportunities, coding projects, or even cricket strategies!</p>
-            <div class="social-links">
-              <a href="mailto:harshponkiya2008@gmail.com" class="social-link">
-                <i class="fas fa-envelope"></i>
-                <span>Email</span>
-              </a>
-              <a href="https://www.linkedin.com/in/harsh-ponkiya-233583386/" class="social-link" target="_blank">
-                <i class="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
-              </a>
-              <a href="https://twitter.com/yourprofile" class="social-link" target="_blank">
-                <i class="fab fa-twitter"></i>
-                <span>Twitter</span>
-              </a>
-            </div>
-          </div>
-          <div class="contact-form">
-            <form id="contactForm">
-              <div style="margin-bottom: 15px;">
-                <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
-              </div>
-              <div style="margin-bottom: 15px;">
-                <input type="email" placeholder="Your Email" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
-              </div>
-              <div style="margin-bottom: 15px;">
-                <textarea placeholder="Your Message" rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
-              </div>
-              <button type="submit" class="btn">Send Message</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Ponkiya Harsh. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script>
-    // Simple form submission handler
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for your message! I will get back to you soon.');
-      this.reset();
-    });
-
-    // Add fade-in animation to elements when they come into view
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, observerOptions);
-
-    // Observe sections for animation
-    document.querySelectorAll('section').forEach(section => {
-      observer.observe(section);
-    });
-  </script>
-</body>
-</html>
+    <!-- Contact Section -->
+    <section id="contact" class="contact glass-card" tabindex="0" aria-label="Contact section">
+      <h2>Contact Me</h2>
+      <div class="contact-content">
+        <div class="contact-text">
+          <p>
+            Interested in working together or just want to say hi? Reach out via email or connect on social media!
+         
+```
